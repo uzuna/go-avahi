@@ -72,7 +72,6 @@ func ServerNew(conn *dbus.Conn) (*Server, error) {
 // Close closes the connection to a server
 func (c *Server) Close() {
 	c.quitChannel <- struct{}{}
-
 	c.mutex.Lock()
 	defer c.mutex.Unlock()
 
