@@ -1,7 +1,7 @@
 package avahi
 
 import (
-	"github.com/godbus/dbus"
+	dbus "github.com/godbus/dbus/v5"
 	"testing"
 )
 
@@ -28,6 +28,7 @@ func TestBasic(t *testing.T) {
 	if err != nil {
 		t.Fatal("Avahi new failed")
 	}
+	defer a.Close()
 
 	s, err := a.GetHostName()
 	if err != nil {
@@ -79,6 +80,6 @@ func TestBasic(t *testing.T) {
 		t.Fatal("Entry group must initially be empty")
 	}
 
-	egc.Free()
+	egc.free()
 
 }
