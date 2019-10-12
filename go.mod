@@ -1,4 +1,4 @@
-module github.com/holoplot/go-avahi
+module github.com/uzuna/go-avahi
 
 go 1.12
 
